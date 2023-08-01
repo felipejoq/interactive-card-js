@@ -16,7 +16,7 @@ los estilos CSS, aplicando así manipulación del DOM con JavaScript.
 - CSS
 - JS Vanilla
 
-### Vista previa:
+### 📸 Vista previa:
 
 ![Vista previa de la tarjeta interactiva](https://github.com/felipejoq/interactive-card-js/blob/main/assets/img/preview.jpg?raw=true)
 
