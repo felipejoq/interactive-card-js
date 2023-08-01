@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio Js - Desafío</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+<article>
+    <header>
+        <img src="./assets/img/maceta.jpg" alt="Maceta ultra bacán!">
+        <span class="priceSpan">($10.000 c/u)</span>
+        <h1>Succulent's Pots</h1>
+    </header>
+    <form id="formCalc">
+        <div class="form-control-group-inline">
+            <div class="form-control">
+                <label for="quantity">Quantity:</label>
+                <input
+                        type="number"
+                        name="quantity"
+                        id="quantity"
+                        value="1"
+                        min="1"
+                        max="10"
+                >
+            </div>
+            <div class="form-control">
+                <label for="color">Color</label>
+                <input type="color" name="color" id="color" list="presets" value="#3dbbff">
+                <datalist id="presets">
+                    <option value="#3dbbff">Skyblue</option>
+                    <option value="#469d37">Green</option>
+                    <option value="#c95b4f">Terracotta</option>
+                    <option value="#b02059">Purple</option>
+                </datalist>
+            </div>
+        </div>
+
+        <button id="btnGetTotal">
+            Get Total
+        </button>
+    </form>
+    <hr/>
+    <footer id="result">
+        <p>Total: <span id="total"></span></p>
+        <p>Quantity: <span id="amountFinal"></span></p>
+        <p><span id="colorSelected"></span></p>
+    </footer>
+</article>
+
+<footer class="credits">
+    <p><a href="https://github.com/felipejoq" target="_blank">Felipe JQ</a> - "Desafío Latam"</p>
+</footer>
+
+<script src="./assets/js/main.js"></script>
+</body>
+</html>
