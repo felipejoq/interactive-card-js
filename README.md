@@ -9,7 +9,7 @@ con el evento "click" que se le añade al botón "Get Total", al presionar este 
 varias funciones que por una parte calculan el total (cantidad por precio) y por otra modifican
 los estilos CSS, aplicando así manipulación del DOM con JavaScript.
 
-👉 [Live Demo Here](https://felipejoq.github.io/interactive-card-js.git) 👈
+👉 [Live Demo Here](https://felipejoq.github.io/interactive-card-js) 👈
 
 ### 📚 Stack utilizado:
 - Html
