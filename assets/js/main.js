@@ -20,7 +20,7 @@ const colorSelected = document.getElementById('colorSelected');
 btnGetTotal.addEventListener('click', (evt) => {
     evt.preventDefault()
     total.innerText = calAmount(quantityInput.value, PRICE_SUCCULENT_POTS)
-    amountFinal.innerText = quantityInput.value
+    amountFinal.innerText = getQuantity(quantityInput.value).toString()
     changeColorHtmlElement(colorSelected, color.value)
 })
 
@@ -38,13 +38,17 @@ const clpCurrency = new Intl.NumberFormat('es-CL', {
     currency: 'CLP',
 });
 
-const calAmount = (amount, price) => {
-    return clpCurrency.format(amount * price);
+const calAmount = (quantity, price) => {
+    return clpCurrency.format(getQuantity(quantity) * price);
 }
 
 const changeColorHtmlElement = (element, color) => {
     result.style.display = 'flex';
     element.innerText = mapColors.get(color) ?? 'Color';
     element.style.background = color;
+}
+
+const getQuantity = (qty) => {
+    return !isNaN(qty) ? qty : 1;
 }
 
