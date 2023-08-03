@@ -19,10 +19,15 @@ const colorSelected = document.getElementById('colorSelected');
  **/
 btnGetTotal.addEventListener('click', (evt) => {
     evt.preventDefault()
-    total.innerText = calAmount(quantityInput.value, PRICE_SUCCULENT_POTS)
-    amountFinal.innerText = getQuantity(quantityInput.value).toString()
-    changeColorHtmlElement(colorSelected, color.value)
-})
+    if(isValidate(quantityInput.value)){
+        total.innerText = calAmount(quantityInput.value, PRICE_SUCCULENT_POTS)
+        amountFinal.innerText = quantityInput.value
+        changeColorHtmlElement(colorSelected, color.value)
+    } else {
+        alert('Ingrese solo números del 1 al 10');
+        quantityInput.value = 1;
+    }
+});
 
 /**
  * Globals functions and helpers
@@ -39,7 +44,7 @@ const clpCurrency = new Intl.NumberFormat('es-CL', {
 });
 
 const calAmount = (quantity, price) => {
-    return clpCurrency.format(getQuantity(quantity) * price);
+    return clpCurrency.format(quantity * price);
 }
 
 const changeColorHtmlElement = (element, color) => {
@@ -48,7 +53,14 @@ const changeColorHtmlElement = (element, color) => {
     element.style.background = color;
 }
 
-const getQuantity = (qty) => {
-    return !isNaN(qty) ? qty : 1;
+const isValidate = (qty) => {
+    let quantity = parseInt(qty);
+
+    let isNumber = !isNaN(quantity);
+    let isInRange = isNumber ? (quantity > 0 && quantity < 11) : false;
+    let isEmpty = qty.toString().length > 0;
+    
+    return isNumber && isInRange && isEmpty;
+
 }
 
